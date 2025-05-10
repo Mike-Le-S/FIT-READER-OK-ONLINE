@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyseur de Fichier FIT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Analyseur de Fichier FIT Garmin</h1>
+            <p>Chargez votre fichier <code>.fit</code> pour obtenir un résumé complet de votre activité.</p>
+        </header>
+
+        <section id="upload-section">
+            <div id="drop-zone" class="drop-zone">
+                <p>Glissez-déposez votre fichier <code>.fit</code> ici</p>
+                <p>ou</p>
+                <input type="file" id="file-input" accept=".fit" class="file-input">
+                <label for="file-input" class="file-label">Choisir un fichier</label>
+            </div>
+            <div id="loading-indicator" class="loading-indicator" style="display: none;">
+                <p>Traitement en cours...</p>
+                <div class="spinner"></div>
+            </div>
+        </section>
+
+        <section id="summary-section" style="display:none;">
+            <h2>Résumé de l'activité</h2>
+            <pre id="summary-output"></pre>
+            <button id="copy-summary-button">Copier le résumé</button>
+        </section>
+        
+        <section id="error-section" class="error-message" style="display:none;">
+            <p id="error-output"></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>Utilise le Garmin FIT SDK v21.158.00</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

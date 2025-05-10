@@ -1,0 +1,3 @@
+Flask>=2.0
+garmin-fit-sdk>=21.158.0 # S'assure d'utiliser la version spécifiée ou une compatible
+gunicorn
